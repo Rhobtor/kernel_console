@@ -2,6 +2,41 @@
 
 A complete custom Linux operating system stack designed for game console handhelds with PDA capabilities.
 
+## Quick Start
+
+### Prerequisites
+- Ubuntu/Debian-based Linux system
+- ARM cross-compilation tools (auto-installed)
+- ~5 GB free disk space
+- 2-4 hours for full build
+
+### Build from Source
+
+```bash
+# Clone repository
+git clone https://github.com/Rhobtor/kernel_console
+cd kernel_console
+
+# Setup environment (downloads ~2GB of kernel/busybox sources)
+make setup
+
+# Build everything (kernel + OS + initramfs)
+# This will take 1-2 hours
+make build
+
+# Check output
+ls -lh releases/v0.1-pi4/
+```
+
+### Install on Raspberry Pi 4
+
+```bash
+# See detailed instructions
+make install-pi
+```
+
+---
+
 ## Project Vision
 
 Building a **multi-version game console and mobile computing device** with custom OS, custom hardware, and full system control.
@@ -12,7 +47,7 @@ Building a **multi-version game console and mobile computing device** with custo
 - Custom Linux kernel (6.12.60-console-v1+)
 - BusyBox minimal OS (2.5 MB initramfs)
 - Base architecture and boot system
-- **Status:** Core OS complete, documentation done
+- **Status:** Core OS complete, build system implemented
 
 ### **v1.0** - First Hardware Release
 - **Hardware:** Raspberry Pi 4 + Custom PCB
@@ -48,6 +83,8 @@ Each version functions as both:
 - Minimal BusyBox rootfs (300+ tools)
 - Complete initramfs boot system
 - SD card access from custom OS
+- 8-phase comprehensive documentation
+- **Reproducible build system** ← NEW!
 - 8-phase comprehensive documentation
 
 ### What's Next 📋

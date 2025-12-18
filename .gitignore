@@ -1,0 +1,71 @@
+# Build artifacts and temporary files
+build/
+releases/*.img
+releases/*.cpio.gz
+releases/*.cpio
+releases/*.iso
+releases/*.tar.gz
+*.o
+*.ko
+*.so
+*.a
+*.mod
+*.cmd
+
+# Build system
+.tmp/
+temp/
+*.pyc
+__pycache__/
+
+# Kernel source (too large)
+src/kernel/linux/
+src/kernel/busybox*/
+build/kernel/linux/
+build/busybox/busybox*/
+build/kernel/busybox*/
+
+# Compiled binaries
+busybox
+vmlinux
+System.map
+*.elf
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.*.swp
+tags
+TAGS
+
+# System files
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Log files
+*.log
+*.out
+
+# Dependencies downloaded by build system
+downloads/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Build output that's not in releases/
+*.img
+*.cpio
+dist/
+
+# Keep releases/ dir but ignore generated files
+# (except we keep it in git for documentation purposes)
+!releases/.gitkeep

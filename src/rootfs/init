@@ -1,0 +1,24 @@
+#!/bin/sh
+
+echo ""
+echo "====================================="
+echo "  Init minimal de la consola (v0.3)"
+echo "====================================="
+echo ""
+
+# Mount /proc and /sys if not already mounted
+mount -t proc proc /proc 2>/dev/null || echo "proc ya montado"
+mount -t sysfs sys /sys 2>/dev/null || echo "sys ya montado"
+
+echo ""
+echo "Montado /proc y /sys (o ya lo estaban)"
+echo ""
+
+# Ensure /dev/console and /dev/null exist
+[ -e /dev/console ] || mknod /dev/console c 5 1
+[ -e /dev/null ]    || mknod /dev/null    c 1 3
+chmod 600 /dev/console
+chmod 666 /dev/null
+
+echo "Entrando en shell BusyBox..."
+exec /bin/sh
