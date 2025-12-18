@@ -1,5 +1,15 @@
 # Progress Logs - Kernel Console Project
 
+## 📚 Project Documentation
+
+Before diving into phases, read the **[PROJECT_VISION.md](../PROJECT_VISION.md)** in the root directory for:
+- Complete version roadmap (v0.x through v3.0)
+- Hardware architecture for each version
+- Learning roadmap for PCB design and embedded programming
+- Long-term project vision
+
+---
+
 ## Organization by Phases
 
 This directory contains progress logs organized by **development phases** rather than dates. Each phase represents a significant milestone in building the kernel and custom OS.
@@ -49,6 +59,18 @@ This directory contains progress logs organized by **development phases** rather
 
 ---
 
+## Phase Progression
+
+**Current Status:** ✅ Phases 1-8 Complete (OS Foundation)
+
+**v0.x Remaining Work:**
+- ⏳ Phase 9: Input System (GPIO/Events)
+- ⏳ Phase 10: Graphics & Framebuffer
+- ⏳ Phase 11: Game Launcher UI
+- ⏳ Phase 12: Emulator Integration
+
+---
+
 ## Quick Reference
 
 | Phase | Main Goal | Key Files | Status |
@@ -61,15 +83,27 @@ This directory contains progress logs organized by **development phases** rather
 | 6 | Package OS | initramfs.cpio.gz | ✅ |
 | 7 | Configure boot | cmdline.txt | ✅ |
 | 8 | Access storage | /mnt/pi_root | ✅ |
+| 9 | Input system | GPIO drivers | ⏳ |
+| 10 | Graphics | Framebuffer/SDL2 | ⏳ |
+| 11 | Game launcher | Menu UI | ⏳ |
+| 12 | Emulators | Game integration | ⏳ |
 
 ---
 
 ## How to Use
 
-1. **New to the project?** → Start with Phase 1
-2. **Need quick reference?** → Check the phase you're working on
-3. **Troubleshooting?** → Each phase has common issues and solutions
-4. **Building on previous work?** → Each phase links to the next
+1. **New to the project?** 
+   - Start with **PROJECT_VISION.md** (understand the full scope)
+   - Then Phase 1 (start coding)
+
+2. **Need quick reference?** 
+   - Check the phase you're working on
+
+3. **Troubleshooting?** 
+   - Each phase has common issues and solutions
+
+4. **Building on previous work?** 
+   - Each phase links to the next
 
 Each phase file contains:
 - ✓ What you did (clear explanation)
@@ -82,18 +116,22 @@ Each phase file contains:
 
 ## Current Status
 
-**Project:** Custom Linux kernel for ARM-based game console
+**Project:** Custom Linux kernel for ARM-based game console + PDA
 
 **Architecture:** ARM 64-bit (aarch64)
 
-**Base Hardware:** Raspberry Pi 4
+**Base Hardware:** Raspberry Pi 4 (v1.0) / Pi 5M (v2.0) / Custom (v3.0)
 
 **Kernel Version:** 6.12.60-console-v1+
 
 **Custom OS:** BusyBox-based minimal system in initramfs (RAM)
 
-**Next Steps:**
-- Automate SD card mounting in /init
-- Add game controller support
-- Implement console graphics/rendering
-- Create game launcher menu system
+**Current Version:** 0.x (OS Foundation)
+
+**Next Version:** 1.0 (Hardware + Game Launcher)
+
+---
+
+## Version Info
+
+For detailed information about all versions (v0.x → v3.0), hardware specs, and learning roadmap, see **[PROJECT_VISION.md](../PROJECT_VISION.md)**
